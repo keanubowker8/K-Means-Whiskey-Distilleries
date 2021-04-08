@@ -1,0 +1,12 @@
+This is good work, there are some issues that need to be cleaned up and this should be good to go.
+
+This repo has checkpoints in it, remove these and add a .gitignore.
+There is a habit we're trying to get people to avoid, that's displaying unnecessary info in their notebook (usually arrays or tables of numbers that serve no purpose). The output of iris_df.describe() is useful cause it contributes to the analysis and we can see meaning full information about the variables. Now consider the output of kmodel.labels_, this is just an array of numbers that doesn't contribute to the analysis, all it shows is that the instance of Kmeans has been called with three clusters which is obvious since you've called it with n_clusters=3. Same thing with kmodel.cluster_centers_ this really doesn't tell us anything meaningful about the model.
+There is also some redundant imports here, these are imported twice in the notebook and numpy is imported but never used
+import matplotlib.pyplot as plt
+import seaborn as sns
+It's better to follow the convention of having all the imports at the top of the notebook, just like we do when working with .py files.
+
+The last two plots in the notebook, the legend for Species is shown with values 0, 1, 2 it would be better to use their actual names otherwise we have to check the meta data to see which is which. Anyway you've already mapped the values to the actual species
+iris_df['Species'].map({'Iris-versicolor':0,'Iris-setosa':1,'Iris-virginica':2})
+so why not use these to make the plots more readable.
