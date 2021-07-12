@@ -7,4 +7,5 @@ pydotplus==2.0.2
 numpy==1.19.2
 folium==0.12.1
 pyproj==3.0.1
-graphviz
+graphviz==0.16
+kneed==0.7.0
